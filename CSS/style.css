@@ -1,0 +1,71 @@
+body {
+  background-color: #e9e9e9;
+  color: #6a6a6a;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.container {
+  background-color: #fafafa;
+  box-shadow: 0px 0px 10px 0px #cccbcb;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.location-date {
+  color: #3e3e3e;
+  font-family: "Istok Web", sans-serif;
+}
+
+.side-weather {
+  background-color: #f7f7f7;
+  border-left: 1px solid #e9e9e9;
+  border-radius: 0px 25px 25px 0px;
+  -webkit-border-radius: 0px 25px 25px 0px;
+  -moz-border-radius: 0px 25px 25px 0px;
+  -ms-border-radius: 0px 25px 25px 0px;
+  -o-border-radius: 0px 25px 25px 0px;
+}
+
+.side-weather .next-day p:first-child {
+  background-color: #6a6a6a;
+  color: var(--white);
+  border-radius: 0px 25px 0px 0px;
+  -webkit-border-radius: 0px 25px 0px 0px;
+  -moz-border-radius: 0px 25px 0px 0px;
+  -ms-border-radius: 0px 25px 0px 0px;
+  -o-border-radius: 0px 25px 0px 0px;
+}
+
+.side-weather .day-after-tommorow p:first-child {
+  background-color: #6a6a6a;
+  color: var(--white);
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+.btn {
+  transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+}
+
+.form-control:focus {
+  border-color: rgb(25, 135, 84);
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+#err-msg {
+  font-size: 14px;
+}
+
+:root {
+  --white: #ffffff;
+}
