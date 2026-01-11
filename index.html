@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Doaa Diaa El Din" />
+    <meta name="generator" content="VS Code 1.99.3" />
+
+    <meta name="application-name" content="Weather App" />
+    <meta
+      name="description"
+      content="A simple and responsive weather app that provides real-time weather updates, forecasts, and location-based conditions."
+    />
+    <meta
+      name="keywords"
+      content="weather, forecast, climate, weather app, real-time weather, weather updates, weather forecasts"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- title and favicon -->
+    <title>Weather App</title>
+    <link
+      rel="shortcut icon"
+      href="./Assets/partly-cloudy-day-icon.png"
+      type="image/png"
+    />
+
+    <!-- css links -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/media_query.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+
+  <body>
+    <main class="d-flex justify-content-center align-items-center vh-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-9 main-weather">
+            <div class="main-weather-div">
+              <div class="today-weather">
+                <div
+                  class="location-date d-flex justify-content-between fw-semibold"
+                >
+                  <p>London</p>
+                  <p>Sun Jul 06 2025</p>
+                </div>
+
+                <p class="display-1 text-center fw-medium">17.3&deg;C</p>
+
+                <div
+                  class="d-flex justify-content-center align-items-center gap-2"
+                >
+                  <img
+                    src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
+                    alt="Partly cloudy"
+                  />
+                  <span class="fs-5">Partly Cloudy</span>
+                </div>
+
+                <ul class="list-unstyled d-flex justify-content-around mt-5">
+                  <li><i class="bi bi-droplet pe-2"></i><span>20 %</span></li>
+                  <li><i class="bi bi-wind pe-2"></i><span>18 km/h</span></li>
+                  <li><i class="bi bi-compass pe-2"></i><span>E</span></li>
+                </ul>
+              </div>
+
+              <div class="d-flex mt-5">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Write your location"
+                  id="location"
+                  aria-label="Search"
+                />
+
+                <button
+                  class="btn btn-outline-success"
+                  onclick="getdaysWeather()"
+                >
+                  Search
+                </button>
+              </div>
+
+              <p id="err-msg" class="text-danger mt-2 ps-1"></p>
+            </div>
+          </div>
+
+          <div class="col-3 side-weather">
+            <div>
+              <div class="row">
+                <div class="col p-0">
+                  <div class="text-center next-day">
+                    <p>Saturday</p>
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
+                      alt="Partly cloudy"
+                    />
+                    <p class="fs-3 fw-bold mb-1">17.3&deg;C</p>
+                    <p>17.3&deg;C</p>
+                    <p class="fw-semibold">Partly Cloudy</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col p-0">
+                  <div class="text-center day-after-tommorow">
+                    <p>Saturday</p>
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
+                      alt="Partly cloudy"
+                    />
+                    <p class="fs-3 fw-bold mb-1">17.3&deg;C</p>
+                    <p>17.3&deg;C</p>
+                    <p class="fw-semibold">Partly Cloudy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- js links -->
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/main.js"></script>
+  </body>
+</html>

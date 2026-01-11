@@ -1,0 +1,33 @@
+@media screen and (max-width: 576px) {
+  .main-weather-div {
+    padding: 24px;
+  }
+
+  .location-date {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .main-weather-div {
+    padding: 24px;
+  }
+
+  .location-date {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-weather-div {
+    padding: 48px;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+
+  .location-date {
+    font-size: 16px;
+  }
+}
