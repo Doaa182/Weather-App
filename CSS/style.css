@@ -72,6 +72,7 @@ body {
 
 nav {
   background-color: #fef5e4;
+  z-index: 999;
 }
 
 .nav-link {
@@ -89,7 +90,8 @@ nav {
   -o-transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
   color: #564635;
   border-bottom: 2px solid #ab9371;
 }
@@ -115,7 +117,6 @@ header {
   background-size: cover;
   filter: blur(1px);
   -webkit-filter: blur(1px);
-  height: 85vh;
 }
 
 :root {

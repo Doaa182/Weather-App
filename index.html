@@ -47,9 +47,13 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
 
-  <body>
+  <body
+    class="position-relative"
+    data-bs-spy="scroll"
+    data-bs-target="#navbar-example"
+  >
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg p-2">
+    <nav class="navbar navbar-expand-lg p-2 position-fixed w-100">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold fs-3" href="#"
           >World<span class="app-name">Xplore</span></a
@@ -90,7 +94,7 @@
         </div>
       </div>
     </nav>
-    <header class=""></header>
+    <header class="vh-100"></header>
 
     <main>
       <section id="country-info" class="bg-danger vh-100">.</section>
