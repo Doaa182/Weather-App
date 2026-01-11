@@ -66,12 +66,56 @@ body {
   font-size: 14px;
 }
 
+.app-name {
+  color: #ab9371;
+}
+
+nav {
+  background-color: #fef5e4;
+}
+
+.nav-link {
+  color: #6f5c46;
+  border-bottom: 2px solid transparent;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #564635;
+  border-bottom: 2px solid #ab9371;
+}
+
+nav .btn {
+  color: #564635;
+  border: 1px solid #564635;
+}
+
+nav .btn:hover,
+nav .btn:active {
+  color: #ffffff;
+  background-color: #6f5c46;
+  border-color: #6f5c46;
+}
+
 header {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(../Assets/4.jpg); */
-  background-image: url(../Assets/4.jpg);
-  background-position: center;
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(../Assets/4.jpg);
+  */
+  background-image: url(../Assets/1.jpg);
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  height: 85vh;
 }
 
 :root {
