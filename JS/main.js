@@ -48,7 +48,6 @@ function displayTodayWeather(data) {
 
   todayWeather.innerHTML = `
 
-
                 <div
                   class="location-date d-flex justify-content-between fw-semibold"
                 >
@@ -78,15 +77,13 @@ function displayNextDayWeather(data, n, c) {
   var day = date.toLocaleDateString("en-US", { weekday: "long" });
 
   c.innerHTML = `
-  
-  
+
                     <p>${day}</p>
                      <img src="https:${nextDay.day.condition.icon}" alt="${nextDay.day.condition.text}" />
                     <p class="fs-3 fw-bold mb-1">${nextDay.day.maxtemp_c}&deg;C</p>
                     <p>${nextDay.day.mintemp_c}&deg;C</p>
                     <p class="fw-semibold">${nextDay.day.condition.text}</p>
-  
-  
+
   `;
 }
 

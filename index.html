@@ -48,94 +48,143 @@
   </head>
 
   <body>
-    <main class="d-flex justify-content-center align-items-center vh-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-9 main-weather">
-            <div class="main-weather-div">
-              <div class="today-weather">
-                <div
-                  class="location-date d-flex justify-content-between fw-semibold"
-                >
-                  <p>London</p>
-                  <p>Sun Jul 06 2025</p>
-                </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg m-4 mb-2">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#"
+          >World<span class="text-success">Xplore</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center w-50"
+          >
+            <li class="nav-item">
+              <a class="nav-link" href="#country-info">Country Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#weather">Weather</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news">News</a>
+            </li>
+          </ul>
 
-                <p class="display-1 text-center fw-medium">17.3&deg;C</p>
+          <button class="btn btn-outline-success" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
 
-                <div
-                  class="d-flex justify-content-center align-items-center gap-2"
-                >
-                  <img
-                    src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
-                    alt="Partly cloudy"
-                  />
-                  <span class="fs-5">Partly Cloudy</span>
-                </div>
+    <header class="vh-100"></header>
 
-                <ul class="list-unstyled d-flex justify-content-around mt-5">
-                  <li><i class="bi bi-droplet pe-2"></i><span>20 %</span></li>
-                  <li><i class="bi bi-wind pe-2"></i><span>18 km/h</span></li>
-                  <li><i class="bi bi-compass pe-2"></i><span>E</span></li>
-                </ul>
-              </div>
+    <main>
+      <section id="country-info" class="bg-danger vh-100">.</section>
 
-              <div class="d-flex mt-5">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Write your location"
-                  id="location"
-                  aria-label="Search"
-                />
+      <section id="weather" class="bg-success vh-100">.</section>
 
-                <button
-                  class="btn btn-outline-success"
-                  onclick="getdaysWeather()"
-                >
-                  Search
-                </button>
-              </div>
+      <section id="news" class="bg-info vh-100">.</section>
 
-              <p id="err-msg" class="text-danger mt-2 ps-1"></p>
-            </div>
-          </div>
+      <section class="d-flex justify-content-center align-items-center vh-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-9 main-weather">
+              <div class="main-weather-div">
+                <div class="today-weather">
+                  <div
+                    class="location-date d-flex justify-content-between fw-semibold"
+                  >
+                    <p>London</p>
+                    <p>Sun Jul 06 2025</p>
+                  </div>
 
-          <div class="col-3 side-weather">
-            <div>
-              <div class="row">
-                <div class="col p-0">
-                  <div class="text-center next-day">
-                    <p>Saturday</p>
+                  <p class="display-1 text-center fw-medium">17.3&deg;C</p>
+
+                  <div
+                    class="d-flex justify-content-center align-items-center gap-2"
+                  >
                     <img
                       src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
                       alt="Partly cloudy"
                     />
-                    <p class="fs-3 fw-bold mb-1">17.3&deg;C</p>
-                    <p>17.3&deg;C</p>
-                    <p class="fw-semibold">Partly Cloudy</p>
+                    <span class="fs-5">Partly Cloudy</span>
+                  </div>
+
+                  <ul class="list-unstyled d-flex justify-content-around mt-5">
+                    <li><i class="bi bi-droplet pe-2"></i><span>20 %</span></li>
+                    <li><i class="bi bi-wind pe-2"></i><span>18 km/h</span></li>
+                    <li><i class="bi bi-compass pe-2"></i><span>E</span></li>
+                  </ul>
+                </div>
+
+                <div class="d-flex mt-5">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Write your location"
+                    id="location"
+                    aria-label="Search"
+                  />
+
+                  <button
+                    class="btn btn-outline-success"
+                    onclick="getdaysWeather()"
+                  >
+                    Search
+                  </button>
+                </div>
+
+                <p id="err-msg" class="text-danger mt-2 ps-1"></p>
+              </div>
+            </div>
+
+            <div class="col-3 side-weather">
+              <div>
+                <div class="row">
+                  <div class="col p-0">
+                    <div class="text-center next-day">
+                      <p>Saturday</p>
+                      <img
+                        src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
+                        alt="Partly cloudy"
+                      />
+                      <p class="fs-3 fw-bold mb-1">17.3&deg;C</p>
+                      <p>17.3&deg;C</p>
+                      <p class="fw-semibold">Partly Cloudy</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col p-0">
-                  <div class="text-center day-after-tommorow">
-                    <p>Saturday</p>
-                    <img
-                      src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
-                      alt="Partly cloudy"
-                    />
-                    <p class="fs-3 fw-bold mb-1">17.3&deg;C</p>
-                    <p>17.3&deg;C</p>
-                    <p class="fw-semibold">Partly Cloudy</p>
+                <div class="row">
+                  <div class="col p-0">
+                    <div class="text-center day-after-tommorow">
+                      <p>Saturday</p>
+                      <img
+                        src="https://cdn.weatherapi.com/weather/64x64/night/116.png"
+                        alt="Partly cloudy"
+                      />
+                      <p class="fs-3 fw-bold mb-1">17.3&deg;C</p>
+                      <p>17.3&deg;C</p>
+                      <p class="fw-semibold">Partly Cloudy</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- js links -->
