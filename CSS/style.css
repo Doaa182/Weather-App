@@ -1,47 +1,49 @@
+*::selection {
+  background-color: #3a356b;
+  color: #f5f9ff;
+}
+
 body {
-  background-color: #e9e9e9;
-  color: #6a6a6a;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Zain", sans-serif;
 }
 
 #weather .weather-widget {
-  background-color: #fafafa;
-  box-shadow: 0px 0px 10px 0px #cccbcb;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
+  background: linear-gradient(135deg, #140831 0%, #532e91 50%, #9a48c8 100%);
+  box-shadow: 0px 0px 10px 0px #8886db;
+  color: #f5f9ff;
+  border-radius: 12px;
+}
+
+#weather .weather-widget i {
+  color: #8886db;
 }
 
 .location-date {
-  color: #3e3e3e;
-  font-family: "Istok Web", sans-serif;
+  color: #b1aef3;
 }
 
 .side-weather {
-  background-color: #f7f7f7;
-  border-left: 1px solid #e9e9e9;
-  border-radius: 0px 25px 25px 0px;
-  -webkit-border-radius: 0px 25px 25px 0px;
-  -moz-border-radius: 0px 25px 25px 0px;
-  -ms-border-radius: 0px 25px 25px 0px;
-  -o-border-radius: 0px 25px 25px 0px;
+  box-shadow: 0px 0px 5px 0px #532e91;
+  border-radius: 0px 12px 12px 0px;
+  -webkit-border-radius: 0px 12px 12px 0px;
+  -moz-border-radius: 0px 12px 12px 0px;
+  -ms-border-radius: 0px 12px 12px 0px;
+  -o-border-radius: 0px 12px 12px 0px;
 }
 
 .side-weather .next-day p:first-child {
-  background-color: #6a6a6a;
-  color: var(--white);
-  border-radius: 0px 25px 0px 0px;
-  -webkit-border-radius: 0px 25px 0px 0px;
-  -moz-border-radius: 0px 25px 0px 0px;
-  -ms-border-radius: 0px 25px 0px 0px;
-  -o-border-radius: 0px 25px 0px 0px;
+  background-color: #422474;
+  color: #f5f9ff;
+  border-radius: 0px 12px 0px 0px;
+  -webkit-border-radius: 0px 12px 0px 0px;
+  -moz-border-radius: 0px 12px 0px 0px;
+  -ms-border-radius: 0px 12px 0px 0px;
+  -o-border-radius: 0px 12px 0px 0px;
 }
 
 .side-weather .day-after-tommorow p:first-child {
-  background-color: #6a6a6a;
-  color: var(--white);
+  background-color: #532e91;
+  color: #f5f9ff;
   border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -137,6 +139,14 @@ header::after {
   -o-border-radius: 50%;
   left: -15%;
   z-index: 1;
+}
+
+h1 {
+  width: 45%;
+}
+
+h1 + img {
+  width: 50px;
 }
 
 header .btn {
