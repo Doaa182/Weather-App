@@ -4,7 +4,7 @@ body {
   font-family: "Titillium Web", sans-serif;
 }
 
-.container {
+#weather .weather-widget {
   background-color: #fafafa;
   box-shadow: 0px 0px 10px 0px #cccbcb;
   border-radius: 25px;
@@ -57,26 +57,23 @@ body {
   -webkit-transition: all 0.25s ease-in;
 }
 
-.form-control:focus {
-  border-color: rgb(25, 135, 84);
-  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
-}
-
 #err-msg {
   font-size: 14px;
 }
 
-.app-name {
-  color: #ab9371;
+.navbar-brand,
+.navbar-brand:focus,
+.navbar-brand:hover {
+  color: #b1aef3;
 }
 
 nav {
-  background-color: #fef5e4;
+  background-color: #ffffff;
   z-index: 999;
 }
 
 .nav-link {
-  color: #6f5c46;
+  color: #b1aef3;
   border-bottom: 2px solid transparent;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -90,33 +87,76 @@ nav {
   -o-transition: all 0.3s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: #564635;
-  border-bottom: 2px solid #ab9371;
+.nav-link i {
+  opacity: 0;
 }
 
-nav .btn {
-  color: #564635;
-  border: 1px solid #564635;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #8886db;
+}
+
+.navbar-nav .nav-link:hover i,
+.navbar-nav .nav-link.active i {
+  opacity: 1;
+}
+
+nav .btn,
+header .btn:hover,
+header .btn:active {
+  color: #8886db;
+  border: 1px solid #8886db;
 }
 
 nav .btn:hover,
-nav .btn:active {
+nav .btn:active,
+header .btn {
   color: #ffffff;
-  background-color: #6f5c46;
-  border-color: #6f5c46;
+  background-color: #8886db;
+  border-color: #8886db;
 }
 
 header {
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(../Assets/4.jpg);
-  */
-  background-image: url(../Assets/1.jpg);
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+  background: url(../Assets/main-bg.png) no-repeat 50% 60% / cover;
+}
+
+header div {
+  z-index: 2;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  background-color: #b1aef3;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  left: -15%;
+  z-index: 1;
+}
+
+header .btn {
+  right: 76%;
+}
+
+header input.form-control#location {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 0.25rem #ffffff;
+  font-weight: 600;
+  color: #3a356b;
+}
+
+header input.form-control#location:focus {
+  border: 2px solid #8886db;
+  box-shadow: 0 0 0 0.25rem #ffffff;
+}
+
+header input.form-control#location::placeholder {
+  color: #9a9ab3;
 }
 
 :root {
