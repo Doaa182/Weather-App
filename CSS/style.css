@@ -159,6 +159,18 @@ header input.form-control#location::placeholder {
   color: #9a9ab3;
 }
 
+#explore {
+  background-color: #ffffff;
+  background-image: url(../Assets/explore-bg.png);
+}
+
+#weather {
+  background-image: url(../Assets/weather-bg.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 55%;
+  background-size: cover;
+}
+
 :root {
   --white: #ffffff;
 }
