@@ -61,6 +61,7 @@ body {
 
 #err-msg {
   font-size: 14px;
+  z-index: 2;
 }
 
 .navbar-brand,

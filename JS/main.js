@@ -8,36 +8,74 @@ var nextDayWeather = document.querySelector(".next-day");
 var afterDayWeather = document.querySelector(".day-after-tommorow");
 var msg = document.getElementById("err-msg");
 
-function getdaysWeather() {
-  var cityName = cityNameInput.value ? cityNameInput.value : "cairo";
-  var apiUrl = `${baseUrl}/forecast.json?key=${myApiKey}&q=${cityName}&days=3`;
+/******************************************************************************************************** */
 
-  var request = new XMLHttpRequest();
-  request.open("get", apiUrl);
-  request.send();
-  request.addEventListener("readystatechange", function () {
-    if (request.readyState === 4) {
-      if (request.status === 200) {
-        try {
-          var data = JSON.parse(request.responseText);
-          clearInput();
-          displayTodayWeather(data);
-          displayNextDayWeather(data, 1, nextDayWeather);
-          displayNextDayWeather(data, 2, afterDayWeather);
-        } catch {
-          msg.innerHTML = "Failed to read weather data. Please try again.";
-        }
-      } else {
-        try {
-          var errData = JSON.parse(request.responseText);
-          msg.innerHTML = `${errData.error.message}`;
-        } catch {
-          msg.innerHTML =
-            "Please check your internet connection or make sure the city name is correct.";
-        }
-      }
+// Navbar Search
+
+searchNavBtn.addEventListener("click", function () {
+  cityNameInput.focus();
+});
+
+/******************************************************************************************************** */
+
+// Weather Widget
+
+// Old Way
+// function getdaysWeather() {
+//   var cityName = cityNameInput.value ? cityNameInput.value : "cairo";
+//   var apiUrl = `${baseUrl}/forecast.json?key=${myApiKey}&q=${cityName}&days=3`;
+
+//   var request = new XMLHttpRequest();
+//   request.open("get", apiUrl);
+//   request.send();
+//   request.addEventListener("readystatechange", function () {
+//     if (request.readyState === 4) {
+//       if (request.status === 200) {
+//         try {
+//           var data = JSON.parse(request.responseText);
+//           clearInput();
+//           displayTodayWeather(data);
+//           displayNextDayWeather(data, 1, nextDayWeather);
+//           displayNextDayWeather(data, 2, afterDayWeather);
+//         } catch {
+//           msg.innerHTML = "Failed to read weather data. Please try again.";
+//         }
+//       } else {
+//         try {
+//           var errData = JSON.parse(request.responseText);
+//           msg.innerHTML = `${errData.error.message}`;
+//         } catch {
+//           msg.innerHTML =
+//             "Please check your internet connection or make sure the city name is correct.";
+//         }
+//       }
+//     }
+//   });
+// }
+
+async function getdaysWeather() {
+  const cityName = cityNameInput.value ? cityNameInput.value : "cairo";
+  const apiUrl = `${baseUrl}/forecast.json?key=${myApiKey}&q=${cityName}&days=3`;
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      const errData = await response.json();
+      msg.innerHTML = errData.error?.message || "Something went wrong.";
+      return;
     }
-  });
+
+    const data = await response.json();
+
+    clearInput();
+    displayTodayWeather(data);
+    displayNextDayWeather(data, 1, nextDayWeather);
+    displayNextDayWeather(data, 2, afterDayWeather);
+  } catch (error) {
+    msg.innerHTML =
+      "Failed to fetch weather data. Please check your internet connection.";
+  }
 }
 
 function clearInput() {
@@ -89,8 +127,6 @@ function displayNextDayWeather(data, n, c) {
   `;
 }
 
-getdaysWeather();
+/******************************************************************************************************** */
 
-searchNavBtn.addEventListener("click", function () {
-  cityNameInput.focus();
-});
+getdaysWeather();
