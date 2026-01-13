@@ -1,11 +1,16 @@
 var searchNavBtn = document.querySelector("nav .btn");
 var cityNameInput = document.getElementById("location");
 
-var baseUrl = "https://api.weatherapi.com/v1";
+var baseUrl = undefined;
 var myApiKey = "5dc24d6c71404744b60113549250507";
+
 var todayWeather = document.querySelector(".today-weather");
 var nextDayWeather = document.querySelector(".next-day");
 var afterDayWeather = document.querySelector(".day-after-tommorow");
+
+var countryInfo = document.querySelector("#explore .container");
+
+var searchHeaderBtn = document.querySelector("header .btn");
 var msg = document.getElementById("err-msg");
 
 /******************************************************************************************************** */
@@ -21,7 +26,7 @@ searchNavBtn.addEventListener("click", function () {
 // Weather Widget
 
 // Old Way
-// function getdaysWeather() {
+// function getDaysWeather() {
 //   var cityName = cityNameInput.value ? cityNameInput.value : "cairo";
 //   var apiUrl = `${baseUrl}/forecast.json?key=${myApiKey}&q=${cityName}&days=3`;
 
@@ -53,8 +58,9 @@ searchNavBtn.addEventListener("click", function () {
 //   });
 // }
 
-async function getdaysWeather() {
+async function getDaysWeather() {
   const cityName = cityNameInput.value ? cityNameInput.value : "cairo";
+  baseUrl = "https://api.weatherapi.com/v1";
   const apiUrl = `${baseUrl}/forecast.json?key=${myApiKey}&q=${cityName}&days=3`;
 
   try {
@@ -72,6 +78,7 @@ async function getdaysWeather() {
     displayTodayWeather(data);
     displayNextDayWeather(data, 1, nextDayWeather);
     displayNextDayWeather(data, 2, afterDayWeather);
+    getCountryInfo(data);
   } catch (error) {
     msg.innerHTML =
       "Failed to fetch weather data. Please check your internet connection.";
@@ -127,6 +134,84 @@ function displayNextDayWeather(data, n, c) {
   `;
 }
 
+searchHeaderBtn.addEventListener("click", getDaysWeather);
+
 /******************************************************************************************************** */
 
-getdaysWeather();
+async function getCountryInfo(data) {
+  baseUrl = "https://restcountries.com/v3.1/name";
+  const countryName = data?.location?.country ?? "egypt";
+  const apiUrl = `${baseUrl}/${countryName}`;
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      const errData = await response.json();
+      msg.innerHTML = errData.message || "Something went wrong.";
+      return;
+    }
+
+    const countryData = await response.json();
+    displayCountryInfo(countryData);
+  } catch (error) {
+    msg.innerHTML =
+      "Failed to fetch Country data. Please check your internet connection.";
+  }
+}
+
+function displayCountryInfo(countryData) {
+  countryInfo.innerHTML = `
+  
+   <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="flag-wrap w-75">
+                <img
+                  class="w-100 rounded"
+                  src=${countryData[0].flags.svg}
+                  alt=${countryData[0].flags.alt}
+                />
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="country-info">
+                <h2 class="fw-bold mb-1 display-3">${
+                  countryData[0].name.common
+                }</h2>
+                <h3 class="text-body-tertiary mb-3 fw-semibold">
+                ${countryData[0].name.official}
+                </h3>
+
+                <ul class="list-unstyled mb-3">
+                  <li><strong>Capital:</strong> ${
+                    countryData[0].capital["0"]
+                  }</li>
+                  <li><strong>Region:</strong> ${countryData[0].region}</li>
+                  <li><strong>Subregion:</strong> ${
+                    countryData[0].subregion
+                  }</li>
+                  <li><strong>Language:</strong> ${
+                    Object.values(countryData[0].languages)[0]
+                  }</li>
+                  <li><strong>Currency:</strong> ${
+                    Object.values(countryData[0].currencies)[0].name
+                  }</li>
+                  <li><strong>Timezone:</strong> ${
+                    countryData[0].timezones["0"]
+                  }</li>
+                </ul>
+
+                <a
+                  href="${countryData[0].maps.googleMaps}"
+                  target="_blank"
+                  class="btn text-decoration-none"
+                >
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+  `;
+}
+
+/******************************************************************************************************** */

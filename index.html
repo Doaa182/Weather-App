@@ -53,7 +53,7 @@
     data-bs-target="#navbar-example"
   >
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg p-2 position-fixed w-100">
+    <nav class="navbar navbar-expand-lg p-2 position-fixed w-100 shadow">
       <div class="container-fluid">
         <a class="navbar-brand fs-3 fw-light" href="#"
           >Pharo<span class="fw-bold">Xplore</span></a
@@ -123,20 +123,56 @@
           aria-label="Search"
         />
 
-        <button
-          class="btn position-absolute"
-          type="button"
-          onclick="getdaysWeather()"
-        >
-          Search
-        </button>
+        <button class="btn position-absolute" type="button">Search</button>
       </div>
 
       <p id="err-msg" class="text-danger mt-3 ms-5"></p>
     </header>
 
     <main>
-      <section id="explore" class="vh-100">.</section>
+      <section
+        id="explore"
+        class="min-vh-100 overflow-hidden d-flex justify-content-center align-items-center"
+      >
+        <div class="country-card bg-white shadow rounded p-4 container my-5">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="flag-wrap w-75">
+                <img
+                  class="w-100 rounded"
+                  src="https://flagcdn.com/eg.svg"
+                  alt="The flag of Egypt is composed of three equal horizontal bands of red, white and black, with Egypt's national emblem — a hoist-side facing gold eagle of Saladin — centered in the white band."
+                />
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="country-info">
+                <h2 class="fw-bold mb-1 display-3">Egypt</h2>
+                <h3 class="text-body-tertiary mb-3 fw-semibold">
+                  Arab Republic of Egypt
+                </h3>
+
+                <ul class="list-unstyled mb-3">
+                  <li><strong>Capital:</strong> Cairo</li>
+                  <li><strong>Region:</strong> Africa</li>
+                  <li><strong>Subregion:</strong> Northern Africa</li>
+                  <li><strong>Language:</strong> Arabic</li>
+                  <li><strong>Currency:</strong> Egyptian pound</li>
+                  <li><strong>Timezone:</strong> UTC+02:00</li>
+                </ul>
+
+                <a
+                  href="https://goo.gl/maps/uoDRhXbsqjG6L7VG7"
+                  target="_blank"
+                  class="btn text-decoration-none"
+                >
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section
         id="weather"

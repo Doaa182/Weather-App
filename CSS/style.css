@@ -106,14 +106,18 @@ nav {
 
 nav .btn,
 header .btn:hover,
-header .btn:active {
+header .btn:active,
+#explore .btn:hover,
+#explore .btn:active {
   color: #8886db;
   border: 1px solid #8886db;
+  background-color: #ffffff;
 }
 
 nav .btn:hover,
 nav .btn:active,
-header .btn {
+header .btn,
+#explore .btn {
   color: #ffffff;
   background-color: #8886db;
   border-color: #8886db;
@@ -170,16 +174,41 @@ header input.form-control#location::placeholder {
   color: #9a9ab3;
 }
 
-#explore {
-  background-color: #ffffff;
-  background-image: url(../Assets/explore-bg.png);
-}
-
 #weather {
   background-image: url(../Assets/weather-bg.jpeg);
   background-repeat: no-repeat;
   background-position: 50% 55%;
   background-size: cover;
+}
+
+#explore {
+  background-color: #ffffff;
+  background-image: url(../Assets/explore-bg.png);
+}
+
+.country-card {
+  color: #6d6cb1;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.country-card strong {
+  color: #3a356b;
+}
+
+#explore h2 {
+  color: #8886db;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#explore h3 {
+  color: #532e91;
 }
 
 :root {
