@@ -2,16 +2,19 @@ var searchNavBtn = document.querySelector("nav .btn");
 var cityNameInput = document.getElementById("location");
 
 var baseUrl = undefined;
-var myApiKey = "5dc24d6c71404744b60113549250507";
+var myApiKey = undefined;
 
 var todayWeather = document.querySelector(".today-weather");
 var nextDayWeather = document.querySelector(".next-day");
 var afterDayWeather = document.querySelector(".day-after-tommorow");
 
 var countryInfo = document.querySelector("#explore .container");
+var countryNews = document.querySelector("#news .container-fluid .row");
 
 var searchHeaderBtn = document.querySelector("header .btn");
 var msg = document.getElementById("err-msg");
+
+var concatNews = "";
 
 /******************************************************************************************************** */
 
@@ -61,6 +64,7 @@ searchNavBtn.addEventListener("click", function () {
 async function getDaysWeather() {
   const cityName = cityNameInput.value ? cityNameInput.value : "cairo";
   baseUrl = "https://api.weatherapi.com/v1";
+  myApiKey = "5dc24d6c71404744b60113549250507";
   const apiUrl = `${baseUrl}/forecast.json?key=${myApiKey}&q=${cityName}&days=3`;
 
   try {
@@ -138,6 +142,8 @@ searchHeaderBtn.addEventListener("click", getDaysWeather);
 
 /******************************************************************************************************** */
 
+// Country Info Card
+
 async function getCountryInfo(data) {
   baseUrl = "https://restcountries.com/v3.1/name";
   const countryName = data?.location?.country ?? "egypt";
@@ -154,6 +160,7 @@ async function getCountryInfo(data) {
 
     const countryData = await response.json();
     displayCountryInfo(countryData);
+    getNews(countryData);
   } catch (error) {
     msg.innerHTML =
       "Failed to fetch Country data. Please check your internet connection.";
@@ -168,8 +175,8 @@ function displayCountryInfo(countryData) {
               <div class="flag-wrap w-75">
                 <img
                   class="w-100 rounded"
-                  src=${countryData[0].flags.svg}
-                  alt=${countryData[0].flags.alt}
+                  src="${countryData[0].flags.svg}"
+                  alt="${countryData[0].flags.alt}"
                 />
               </div>
             </div>
@@ -215,3 +222,89 @@ function displayCountryInfo(countryData) {
 }
 
 /******************************************************************************************************** */
+
+// News
+
+async function getNews(countryData) {
+  baseUrl = "https://newsdata.io/api/1/latest";
+  myApiKey = "pub_2e05f324ce3e439aa84093933adaf557";
+  const countryCode = countryData[0]?.cca2?.toLowerCase() ?? "eg";
+  const apiUrl = `${baseUrl}?apikey=${myApiKey}&country=${countryCode}`;
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      const errData = await response.json();
+      msg.innerHTML = errData.message || "Something went wrong.";
+      return;
+    }
+
+    const NewsData = await response.json();
+    console.log(NewsData);
+
+    displayNews(NewsData);
+  } catch (error) {
+    msg.innerHTML =
+      "Failed to fetch News. Please check your internet connection.";
+  }
+
+  console.log(apiUrl);
+}
+
+function displayNews(NewsData) {
+  console.log(NewsData.results.length);
+
+  for (var i = 0; i < NewsData.results.length; i++) {
+    concatNews += `
+      <div class="col-md-4 col-12">
+          <div class="news-card rounded shadow mb-4 overflow-hidden object-fit-cover">
+              <div class="position-relative">
+                  <img
+                      src="${NewsData.results[i].image_url}"
+                      alt="${NewsData.results[i].title}"
+                      class="w-100"
+                  />
+
+                  <span
+                    class="badge position-absolute start-0 m-2 text-capitalize"
+                    >${NewsData.results[i].category[0]}</span
+                  >
+              </div>
+              
+              <div class="card-body p-3 position-relative">
+                <div class="news-title fw-bold fs-5">
+                  ${NewsData.results[i].title}                  
+                </div>
+
+                <div class="news-description my-2">
+                  ${NewsData.results[i].description}
+                </div>
+
+                <div class="news-meta">
+                  <p class="m-0"><strong>By:</strong> 
+                  ${NewsData.results[i].creator[0]}
+                  </p>
+
+                  <p class="m-0">
+                  ${new Date(NewsData.results[i].pubDate).toLocaleDateString(
+                    "en-US"
+                  )}
+                  </p>
+                </div>
+                <a
+                  href="${NewsData.results[i].link}"
+                  target="_blank"
+                  class="position-absolute end-0 me-2 text-decoration-none rounded p-1"
+                >
+                  Read More
+                </a>
+                
+              </div>
+        </div>
+      </div>`;
+  }
+  countryNews.innerHTML = concatNews;
+}
+/******************************************************************************************************** */
+// getDaysWeather();

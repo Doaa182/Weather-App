@@ -211,6 +211,53 @@ header input.form-control#location::placeholder {
   color: #532e91;
 }
 
+#news h2 {
+  color: #8886db;
+}
+
+#news .news-card {
+  transition: transform 0.3s ease;
+}
+
+#news .news-card:hover {
+  transform: translateY(-5px);
+}
+
+#news .news-card .card-body {
+  color: #3a356b;
+}
+
+#news .news-card .news-title {
+  color: #8886db;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#news .news-card .news-description {
+  color: #532e91;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#news .news-card .news-meta {
+  color: #6d6cb1;
+  font-size: 14px;
+}
+
+#news .badge {
+  background-color: #8886db;
+}
+
+#news .news-card a {
+  color: #ffffff;
+  background-color: #8886db;
+  bottom: 3%;
+}
+
+#news .news-card a:hover {
+  background-color: #532e91;
+}
+
 :root {
   --white: #ffffff;
 }
