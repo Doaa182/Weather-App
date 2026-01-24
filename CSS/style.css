@@ -156,6 +156,7 @@ h1 + img {
 
 header .btn {
   right: 76%;
+  z-index: 33;
 }
 
 header input.form-control#location {
@@ -256,6 +257,26 @@ header input.form-control#location::placeholder {
 
 #news .news-card a:hover {
   background-color: #532e91;
+}
+
+header .btn:disabled,
+header .btn:disabled:hover,
+header .btn:disabled:active,
+header .btn:disabled:focus {
+  color: #ffffff;
+  background-color: #5f65cf;
+  border-color: #5f65cf;
+}
+
+header .btn:disabled,
+header .btn:disabled:hover {
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+
+header .btn:disabled:active,
+header .btn:disabled:focus {
+  pointer-events: none;
 }
 
 :root {
