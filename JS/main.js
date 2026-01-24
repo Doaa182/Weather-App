@@ -232,7 +232,6 @@ async function getNews(countryData) {
     }
 
     const NewsData = await response.json();
-    console.log(NewsData);
 
     displayNews(NewsData);
   } catch (error) {
