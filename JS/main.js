@@ -232,6 +232,7 @@ async function getNews(countryData) {
     }
 
     const NewsData = await response.json();
+    console.log(NewsData);
 
     displayNews(NewsData);
   } catch (error) {
@@ -247,6 +248,12 @@ function displayNews(NewsData) {
   const results = NewsData?.results ?? [];
 
   for (let i = 0; i < results.length; i++) {
+    const textAlignClass =
+      results[i]?.language === "arabic" ? "text-end" : "text-start";
+
+    const btnDirectionClass =
+      results[i]?.language === "arabic" ? "start-0 ms-3" : "end-0 me-3";
+
     concatNews += `
       <div class="col-md-4 col-12">
           <div class="news-card rounded shadow mb-4 overflow-hidden object-fit-cover">
@@ -263,7 +270,7 @@ function displayNews(NewsData) {
                   >
               </div>
               
-              <div class="card-body p-3 position-relative">
+              <div class="card-body p-3 position-relative ${textAlignClass}">
                 <div class="news-title fw-bold fs-5">
                   ${results[i]?.title ?? "_"}                  
                 </div>
@@ -288,7 +295,7 @@ function displayNews(NewsData) {
                 <a
                   href="${results[i]?.link ?? "_"}"
                   target="_blank"
-                  class="position-absolute end-0 me-2 text-decoration-none rounded p-1"
+                  class="position-absolute ${btnDirectionClass} mb-2 text-decoration-none rounded p-1"
                 >
                   Read More
                 </a>
