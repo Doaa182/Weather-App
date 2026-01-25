@@ -227,6 +227,8 @@ async function getNews(countryData) {
   const countryCode = countryData[0]?.cca2?.toLowerCase() ?? "eg";
   const apiUrl = `${NEWS_BASE_URL}?apikey=${NEWS_API_KEY}&country=${countryCode}`;
 
+  countryNews.innerHTML = "";
+
   try {
     const response = await fetch(apiUrl);
 
@@ -234,6 +236,13 @@ async function getNews(countryData) {
       const errData = await response.json();
       console.error("News API HTTP Error:", errData);
       msg.innerHTML = errData.message || "Something went wrong.";
+      countryNews.innerHTML = `
+        <div class="col-12">
+          <p class="text-center fw-bold fs-5 mt-3">
+            No news available for this country.
+          </p>
+        </div>
+      `;
       return;
     }
 
