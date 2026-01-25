@@ -123,6 +123,10 @@ header .btn,
   border-color: #8886db;
 }
 
+section {
+  scroll-margin-top: 68px;
+}
+
 header div {
   z-index: 2;
 }
