@@ -6,12 +6,12 @@ a Pharaoh-inspired global exploration platform, revealing countries, real-time w
 
 ## 💡 Key Features:
 
-🔹 Search for countries or cities to get detailed information including capital, region, languages, currency, and time zone 
-🔹 Real-time 3-day weather forecasts using the WeatherAPI 
-🔹 Top news headlines per country using NewsData API 
-🔹 Fully responsive layout for mobile, tablet, and desktop 
-🔹 Interactive UI cards with hover effects, badges, and dynamic text alignment for RTL/LTR languages 
-🔹 Clean, modern design inspired by Egyptian pharaoh themes
+🔹 Search for countries or cities to get detailed information including capital, region, languages, currency, and time zone  
+🔹 Real-time 3-day weather forecasts using the WeatherAPI  
+🔹 Top news headlines per country using NewsData API  
+🔹 Fully responsive layout for mobile, tablet, and desktop  
+🔹 Interactive UI cards with hover effects, badges, and dynamic text alignment for RTL/LTR languages  
+🔹 Clean, modern design inspired by Egyptian pharaoh themes  
 
 ---
 
