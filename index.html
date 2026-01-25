@@ -73,7 +73,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul
-            class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center w-50 gap-4"
+            class="navbar-nav  mb-2 mb-lg-0 justify-content-center w-50 gap-4"
           >
             <li class="nav-item">
               <a class="nav-link fs-6 fw-semibold pb-1" href="#explore">
@@ -103,30 +103,37 @@
 
     <!-- header/home -->
     <header
-      class="vh-100 d-flex justify-content-center align-items-start position-relative flex-column overflow-hidden"
+      class=" d-flex justify-content-center align-items-start position-relative flex-column overflow-hidden"
     >
-      <div>
-        <h1 class="mt-5 display-3 fw-semibold text-white ms-5">
-          Explore the World Like a Pharaoh
-          <img src="./Assets/crook-and-flail.png" alt="Crook and Flail" />
-        </h1>
-      </div>
 
-      <div
-        class="mt-5 w-100 d-flex justify-content-start align-items-center position-relative ms-5"
-      >
-        <input
-          class="form-control w-25 p-3"
-          type="text"
-          placeholder="Enter country or city"
-          id="location"
-          aria-label="Search"
-        />
+            <div>
+              <h1 class="display-3 fw-semibold text-white ">
+                Explore the World Like a Pharaoh
+                <img src="./Assets/crook-and-flail.png" alt="Crook and Flail" />
+              </h1>
+            </div>
 
+            <div
+                class="mt-5 w-100 d-flex justify-content-start align-items-center position-relative"
+              >
+                <input
+                  class="form-control p-3"
+                  type="text"
+                  placeholder="Enter country or city"
+                  id="location"
+                  aria-label="Search"
+                />
+
+                
+                  <button class="btn position-absolute" type="button">Search</button> 
+              
+            </div>
         
-          <button class="btn position-absolute" type="button">Search</button> 
-      
-    </div>
+            <div class="img-wrap mt-5">
+            <img src="./Assets/main-img.png" alt="main image" class="w-100" >
+            </div>
+         
+        
 
       <p id="err-msg" class="text-danger mt-3 ms-5"></p>
     </header>
@@ -180,7 +187,7 @@
         id="weather"
         class="d-flex justify-content-center align-items-center vh-100"
       >
-        <div class="container weather-widget me-5">
+        <div class="container weather-widget">
         <div class="row">
             <div class="col-9 main-weather">
               <div class="main-weather-div">
@@ -243,7 +250,7 @@
         </div>
       </section>
 
-      <section id="news" class="bg-white vh-100 my-5">
+      <section id="news" class="bg-white my-5">
         <h2 class="display-3 mx-auto my-5 fw-bold w-50 text-center">
           Latest News
         </h2>
@@ -481,109 +488,20 @@
                       </div>
                 </div>
               </div>
-              <div class="col-md-4 col-12">
-                  <div class="news-card rounded shadow mb-4 overflow-hidden  ">
-                      <div class="position-relative">
-                          <img src="https://www.vetogate.com/UploadCache/libfiles/571/0/600x338o/160.jpg" alt="11500 ليرة سعر الدولار في مصرف سوريا المركزي" class="w-100">
-
-                          <span class="badge position-absolute start-0 m-2 text-capitalize">top</span>
-                      </div>
-                      
-                      <div class="card-body  text-end p-3 position-relative">
-                        <div class="news-title fw-bold fs-5">
-                          11500 ليرة سعر الدولار في مصرف سوريا المركزي                  
-                        </div>
-
-                        <div class="news-description my-2">
-                          شهد سعر الدولار استقرارًا مقابل الليرة السورية في مصرف سوريا المركزي، بختام تعاملات الأسبوع...
-                        </div>
-
-                        <div class="news-meta">
-                          <p class="m-0"><strong>By:</strong> 
-                          فيتو
-                          </p>
-
-                          <p class="m-0">
-                          1/23/2026
-                          </p>
-                        </div>
-                        <a href="https://www.vetogate.com/5579445" target="_blank" class="position-absolute start-0 ms-3 mb-2 text-decoration-none rounded p-1">
-                          Read More
-                        </a>
-                        
-                      </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-12">
-                  <div class="news-card rounded shadow mb-4 overflow-hidden  ">
-                      <div class="position-relative">
-                          <img src="https://www.dostor.org/UploadCache/libfiles/498/3/600x338o/369.webp" alt="الصين تعلق على قرار ترامب بشأن النفط الفنزويلي: نحن دولة ذات سيادة" class="w-100">
-
-                          <span class="badge position-absolute start-0 m-2 text-capitalize">top</span>
-                      </div>
-                      
-                      <div class="card-body  text-end p-3 position-relative">
-                        <div class="news-title fw-bold fs-5">
-                          الصين تعلق على قرار ترامب بشأن النفط الفنزويلي: نحن دولة ذات سيادة                  
-                        </div>
-
-                        <div class="news-description my-2">
-                          علقت الخارجية الصينية، على قرار الرئيس الأمريكي بشأن شروط شراء النفط الفنزويلي، وقالت “نحن دولة ذات سيادة ولنا الحق في اختيار شركائنا الاقتصاديين بحرية”، وذلك وفقا لنبأ عاجل أفادت به قناة القاهرة الإخبارية
-                        </div>
-
-                        <div class="news-meta">
-                          <p class="m-0"><strong>By:</strong> 
-                          جريدة الدستور
-                          </p>
-
-                          <p class="m-0">
-                          1/23/2026
-                          </p>
-                        </div>
-                        <a href="https://www.dostor.org/5391934" target="_blank" class="position-absolute start-0 ms-3 mb-2 text-decoration-none rounded p-1">
-                          Read More
-                        </a>
-                        
-                      </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-12">
-                  <div class="news-card rounded shadow mb-4 overflow-hidden  ">
-                      <div class="position-relative">
-                          <img src="https://www.dostor.org/UploadCache/libfiles/497/1/600x338o/883.jpg" alt="تعرف على سعر الدولار في بداية التعاملات اليوم الجمعة 23 يناير 2026" class="w-100">
-
-                          <span class="badge position-absolute start-0 m-2 text-capitalize">top</span>
-                      </div>
-                      
-                      <div class="card-body  text-end p-3 position-relative">
-                        <div class="news-title fw-bold fs-5">
-                          تعرف على سعر الدولار في بداية التعاملات اليوم الجمعة 23 يناير 2026                  
-                        </div>
-
-                        <div class="news-description my-2">
-                          تراجع سعر الدولار اليوم الجمعة 23-1-2026 أمام الجنيه في بداية التعاملات في أغلب البنوك المحلية العاملة بالسوق المصرفية المصرية
-                        </div>
-
-                        <div class="news-meta">
-                          <p class="m-0"><strong>By:</strong> 
-                          جريدة الدستور
-                          </p>
-
-                          <p class="m-0">
-                          1/23/2026
-                          </p>
-                        </div>
-                        <a href="https://www.dostor.org/5391922" target="_blank" class="position-absolute start-0 ms-3 mb-2 text-decoration-none rounded p-1">
-                          Read More
-                        </a>
-                        
-                      </div>
-                  </div>
-              </div>
+             
           </div>
         </div>
       </section>
     </main>
+
+  <footer class="text-center mt-0 mb-0">
+  <p class="m-0 p-4">
+    Background images: Designed by <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer">Freepik</a>
+  </p>
+</footer>
+
+
+
 
     <!-- js links -->
     <script src="./JS/bootstrap.bundle.min.js"></script>

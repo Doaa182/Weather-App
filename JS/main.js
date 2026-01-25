@@ -1,3 +1,9 @@
+/**********************************************************************
+  NOTE: 
+  This project uses public API keys for frontend demo purposes.
+  In a real production app, API requests should be routed through a server to keep keys private.
+**********************************************************************/
+
 const searchNavBtn = document.querySelector("nav .btn");
 const cityNameInput = document.getElementById("location");
 

@@ -123,40 +123,12 @@ header .btn,
   border-color: #8886db;
 }
 
-header {
-  background: url(../Assets/main-bg.png) no-repeat 50% 60% / cover;
-}
-
 header div {
   z-index: 2;
 }
 
-header::after {
-  content: "";
-  position: absolute;
-  background-color: #b1aef3;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  left: -15%;
-  z-index: 1;
-}
-
-h1 {
-  width: 45%;
-}
-
 h1 + img {
   width: 50px;
-}
-
-header .btn {
-  right: 76%;
-  z-index: 33;
 }
 
 header input.form-control#location {
@@ -295,6 +267,15 @@ header .btn:disabled:focus {
 #news .news-card img {
   height: 220px;
   object-fit: cover;
+}
+
+footer {
+  background-color: #422474;
+  color: white;
+}
+
+footer a {
+  color: #b1aef3;
 }
 
 :root {
