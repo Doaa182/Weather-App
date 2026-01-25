@@ -321,4 +321,4 @@ function displayNews(NewsData) {
   countryNews.innerHTML = concatNews;
 }
 /******************************************************************************************************** */
-// getDaysWeather();
+getDaysWeather();
