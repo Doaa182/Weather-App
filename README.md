@@ -1,6 +1,6 @@
 # 🗺️ PharoXplore
 
-a Pharaoh-inspired global exploration platform, revealing countries, real-time weather, and world news through the eyes of ancient discovery.  
+A Pharaoh-inspired global exploration platform, revealing countries, real-time weather, and world news through the eyes of ancient discovery.  
 
 ---
 
@@ -24,6 +24,14 @@ a Pharaoh-inspired global exploration platform, revealing countries, real-time w
 - **JavaScript (DOM manipulation, Event handling, API integration using async/await)**  
 - **Google Fonts**  
 - **Bootstrap Icons**
+
+---
+
+## 🖼️ Image Credits
+
+All images used in this project are sourced from **Freepik**  
+© Freepik — https://www.freepik.com  
+Used under Freepik’s free license with required attribution.
 
 ---
 
